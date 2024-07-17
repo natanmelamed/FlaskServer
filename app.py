@@ -52,7 +52,7 @@ def json_command(command: str) -> Tuple[Response, int]:
 
     if command == 'ls':
         if os.path.isdir(path):
-            result = subprocess.run(['ls', '-lh', path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
+            result: subprocess.CompletedProcess[str] = subprocess.run(['ls', '-lh', path], stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
             return jsonify({"output": result.stdout if result.returncode == 0 else result.stderr}), 200
         else:
             return jsonify({"error": ERROR_PATH_IS_NOT_DIRECTORY}), 400
