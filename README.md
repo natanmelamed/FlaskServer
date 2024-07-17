@@ -17,8 +17,8 @@ This project is a simple Flask web server that provides three endpoints:
 1. Clone the repository:
 
     ```bash
-    git clone <repository-url>
-    cd <repository-directory>
+    git clone https://github.com/natanmelamed/FlaskServer
+    cd FlaskServer
     ```
 
 2. Build the Docker image:
